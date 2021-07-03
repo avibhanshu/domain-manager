@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="container">
+    <div class="user">
+      <div class="user__imgcontainer">
+        <img class="user__img" src="../../assets/img/user.jpg" alt="" />
+      </div>
+      <div class="user__info">
+        <p class="user__info--name">John Doe</p>
+        <p class="user__info--email">email.address@email.com</p>
+      </div>
+    </div>
+    <ul class="nav__list">
+      <li class="nav__item" *ngFor="let item of menuItems">
+        <a class="nav__link" routerLink="/">{{ item }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+.main {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    color: #fff;
+}
+
+.container {
+    & .user .user__imgcontainer {
+        text-align: center;
+    }
+
+    & .user {
+        .user__img {
+            border-radius: 100%;
+            margin-bottom: 1.25rem;
+            height: 6rem;
+        }
+
+        .user__info {
+            margin-bottom: 3.5rem;
+            text-align: center;
+            padding: 0 0.75rem;
+
+            .user__info--name {
+                margin-bottom: 0.25rem;
+            }
+        }
+    }
+
+    & .nav__list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        height: 20rem;
+        justify-content: space-evenly;
+    }
+
+    & .nav__item {
+        transition: 0.3s;
+        padding: 1rem 2rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #4f6cdf;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+}
