@@ -1,1 +1,20 @@
-<p>site-details works!</p>
+<header class="content__header">
+    <h2>Site Details</h2>
+    <a type="button" class="btn">+ Add Site</a>
+</header>
+
+<app-table-config></app-table-config>
+
+<table>
+    <tr>
+        <th *ngFor="let col of columns">
+            {{ col }}
+        </th>
+    </tr>
+
+    <tr *ngFor="let domain of domains">
+        <td *ngFor="let i of index">
+            {{ domain[i] }}
+        </td>
+    </tr>
+</table>
