@@ -1,13 +1,16 @@
 .container {
     display: flex;
-    height: 100vh;
 
     & .sidebar {
-        flex-basis: 17.5%;
         background-color: #5B7CFD;
+        position: fixed;
+        height: 100%;
+        width: 15%;
     }
-
+    
     & .content {
-        flex-basis: 82.5%;
+        position: relative;
+        flex-basis: 85%;
+        left: 15%;
     }
 }

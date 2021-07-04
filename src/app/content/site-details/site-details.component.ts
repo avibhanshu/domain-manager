@@ -33,26 +33,30 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
     // this.domainService.addDomain();
   }
 
+  calcProgress(usedCapacity: any, totalCapacity: any) {
+    const numerator = parseInt(usedCapacity.toString());
+    const denominator = parseInt(totalCapacity.toString());
+    const percentage = (numerator/denominator) * 100;
+    return `${percentage}%`;
+  }
+
+  getTagClass(tag: string) {
+    const classObj = {
+      Primary: 'primary',
+      Staging: 'staging',
+      'Add On': 'add-on',
+      Active: 'active',
+      Inactive: 'inactive'
+    }
+    return classObj[tag];
+  }
+
   columns = [
-    'Domain & Plan Name',
+    'Domain Name',
     'Storage',
     'Monthly Visitor',
     'Domains',
     'Status',
-  ];
-
-  index = [
-    // 'id',
-    'domain',
-    'storage',
-    // 'usedStorage',
-    // 'domainTag',
-    'monthlyVisitor',
-    'availableDomains',
-    'status'
-    // 'usedDomains',
-    // 'monthlyVisitorCapacity',
-    // 'subdomain',
   ];
 
   ngOnDestroy(): void {

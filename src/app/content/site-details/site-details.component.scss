@@ -1,13 +1,127 @@
 .content__header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
 
-    .btn {
-        background-color: #5B7CFD;
-        border-radius: 4px;
-        color: #fff;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
+  .btn {
+    background-color: #5b7cfd;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+.data__table {
+  margin-top: 3rem;
+
+  .data__columns {
+    display: flex;
+    width: 100%;
+    background-color: #e3e5e8;
+    border-radius: 5px;
+    justify-content: space-between;
+
+    .data__column {
+      padding: 1rem 2rem;
+      color: #737b8b;
+      flex-basis: 20%;
+      text-align: center;
     }
+  }
+
+  .data__table-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 20%;
+  }
+
+  .tag {
+      padding: 0.25rem 0.75rem;
+      border-radius: 5px;
+  }
+
+  .add-on {
+    background-color: #fbe691;
+    color: #ffae33;
+  }
+
+  .primary {
+    background-color: #DEE5FF;
+    color: #D8E0FE;
+  }
+
+  .staging {
+      background-color: lighten(#FFC0CB, 7.5%);
+      color: darken(#FFC0CB, 20%);
+  }
+
+  .active {
+    background-color: #CDF5F4;
+    color: #5b7cfd;
+  }
+
+  .inactive {
+      background-color: lighten(#FF7F57, 15%);
+      color: darken(#FF7F57, 25%);
+  }
+
+
+  .data__row {
+    margin: 1rem 0;
+
+    .domain__details {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      background-color: #FFFFFF;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      padding: 1.75rem 0;
+
+      .domain__details--storage {
+        justify-content: space-evenly;
+      }
+
+      .domain__details--monthly-visitor {
+        justify-content: space-evenly;
+      }
+
+      .progress-bar {
+        background-color: #e7eef7;
+        width: 80%;
+        margin-bottom: 0.5rem;
+
+        .status {
+          background-color: #33cc86;
+          height: 1rem;
+        }
+
+        .domain-status {
+          background-color: #5b7cfd;
+        }
+      }
+    }
+
+    .subdomain__details {
+      background-color: #e3e5e8;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+      .data__row--subdomain {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: 1.5rem 0;
+      }
+    }
+  }
 }

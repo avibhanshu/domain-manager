@@ -1,20 +1,84 @@
 <header class="content__header">
-    <h2>Site Details</h2>
-    <a type="button" class="btn">+ Add Site</a>
+  <h1>Site Details</h1>
+  <a type="button" class="btn">+ Add New Site</a>
 </header>
 
 <app-table-config></app-table-config>
 
-<table>
-    <tr>
-        <th *ngFor="let col of columns">
-            {{ col }}
-        </th>
-    </tr>
-
-    <tr *ngFor="let domain of domains">
-        <td *ngFor="let i of index">
-            {{ domain[i] }}
-        </td>
-    </tr>
-</table>
+<section class="data__table">
+  <div class="data__columns">
+    <div *ngFor="let col of columns" class="data__column">
+      {{ col }}
+    </div>
+  </div>
+  <div class="data__row" *ngFor="let domain of domains">
+    <div class="domain__details">
+      <div class="domain__details--name data__table-cell">
+        {{ domain.domain }}
+      </div>
+      <div class="domain__details--storage data__table-cell">
+        <div class="progress-bar">
+          <div
+            class="status"
+            [ngStyle]="{
+              width: calcProgress(domain.usedStorage, domain.storage)
+            }"
+          ></div>
+        </div>
+        <p>{{ domain.usedStorage }} of {{ domain.storage }}</p>
+      </div>
+      <div class="domain__details--monthly-visitor data__table-cell">
+        <div class="progress-bar">
+          <div
+            class="status"
+            [ngStyle]="{
+              width: calcProgress(
+                domain.monthlyVisitor,
+                domain.monthlyVisitorCapacity
+              )
+            }"
+          ></div>
+        </div>
+        <p>
+          {{ domain.monthlyVisitor }} of {{ domain.monthlyVisitorCapacity }}
+        </p>
+      </div>
+      <div class="domain__details--domains data__table-cell">
+        <div class="progress-bar">
+          <div
+            class="status domain-status"
+            [ngStyle]="{
+              width: calcProgress(domain.usedDomains, domain.availableDomains)
+            }"
+          ></div>
+        </div>
+        <p>{{ domain.usedDomains }} / {{ domain.availableDomains }}</p>
+      </div>
+      <div class="domain__details--status data__table-cell">
+        <div class="tag" [ngClass]="getTagClass(domain.status)">
+            {{ domain.status }}
+          </div>
+      </div>
+    </div>
+    <div class="subdomain__details" *ngIf="domain.subdomain.length">
+      <div
+        class="data__row--subdomain"
+        *ngFor="let subdomain of domain.subdomain"
+      >
+        <div class="data__table-cell">{{ subdomain.name }}</div>
+        <div class="data__table-cell">{{ subdomain.usedStorage }}</div>
+        <div class="data__table-cell">{{ subdomain.monthlyVisitor }}</div>
+        <div class="data__table-cell">
+          <div class="tag" [ngClass]="getTagClass(subdomain.domainTag)">
+            {{ subdomain.domainTag }}
+          </div>
+        </div>
+        <div class="data__table-cell">
+          <div class="tag" [ngClass]="getTagClass(domain.status)">
+            {{ domain.status }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
