@@ -3,7 +3,13 @@
   <a type="button" class="btn">+ Add New Site</a>
 </header>
 
-<app-table-config></app-table-config>
+<!-- <app-table-config></app-table-config> -->
+<div class="config">
+    <p>Show</p>
+    <input type="number" class="entries input">
+    <p>Entries</p>
+    <input type="text" name="" id="" placeholder="Search" class="search input" [(ngModel)]="searchText">
+</div>
 
 <section class="data__table">
   <div class="data__columns">
@@ -11,7 +17,7 @@
       {{ col }}
     </div>
   </div>
-  <div class="data__row" *ngFor="let domain of domains">
+  <div class="data__row" *ngFor="let domain of domains | filter: searchText">
     <div class="domain__details">
       <div class="domain__details--name data__table-cell">
         {{ domain.domain }}

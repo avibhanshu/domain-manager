@@ -31,7 +31,7 @@
     
         {
             "id": 2,
-            "domain": "xyz.com",
+            "domain": "egh.com",
             "storage": "100gb",
             "usedStorage": "50gb",
             "domainTag": "Primary",
@@ -45,7 +45,7 @@
     
         {
             "id": 3,
-            "domain": "xyz.com",
+            "domain": "ijk.com",
             "storage": "100gb",
             "usedStorage": "50gb",
             "domainTag": "Primary",

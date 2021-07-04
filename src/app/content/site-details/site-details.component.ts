@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { DomainsService } from '../domains.service';
-import { Domain } from '../models/domain';
+import { Domain } from '../../models/domain';
 
 @Component({
   selector: 'app-site-details',
@@ -12,6 +12,7 @@ import { Domain } from '../models/domain';
 export class SiteDetailsComponent implements OnInit, OnDestroy {
   domains: Domain[] = [];
   domainsSubscription: Subscription;
+  searchText: string = '';
   constructor(private domainService: DomainsService) {}
 
   ngOnInit(): void {

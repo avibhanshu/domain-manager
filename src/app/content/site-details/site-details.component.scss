@@ -12,6 +12,27 @@
   }
 }
 
+.config {
+    display: flex;
+    width: 37.5%;
+    justify-content: space-between;
+
+    .entries {
+        width: 5rem;
+    }
+    
+    .search {
+        margin: 0 2.5rem;
+    }
+    
+    .input {
+        background: transparent;
+        border-radius: 5px;
+        border: 2px solid #929292;
+        padding: 0.1rem;
+    }
+}
+
 .data__table {
   margin-top: 3rem;
 
