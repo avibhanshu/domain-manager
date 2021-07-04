@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { DomainsService } from '../domains.service';
+import { DomainsService } from '../services/domains.service';
 import { Domain } from '../../models/domain';
 
 @Component({
@@ -14,6 +14,13 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
   domainsSubscription: Subscription;
   searchText: string = '';
   entriesCount: number = this.domains.length;
+  tagClasses: object = {
+    Primary: 'primary',
+    Staging: 'staging',
+    'Add On': 'add-on',
+    Active: 'active',
+    Inactive: 'inactive',
+  };
   constructor(private domainService: DomainsService) {}
 
   ngOnInit(): void {
@@ -45,15 +52,8 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
     return `${percentage}%`;
   }
 
-  getTagClass(tag: string) {
-    const classObj = {
-      Primary: 'primary',
-      Staging: 'staging',
-      'Add On': 'add-on',
-      Active: 'active',
-      Inactive: 'inactive',
-    };
-    return classObj[tag];
+  getTagClass(tagName: string) {
+    return this.tagClasses[tagName];
   }
 
   columns = ['Domain Name', 'Storage', 'Monthly Visitor', 'Domains', 'Status'];
