@@ -1,8 +1,9 @@
+@import '../styles.scss';
 .container {
     display: flex;
 
     & .sidebar {
-        background-color: #5B7CFD;
+        background-color: $blue-background;
         position: fixed;
         height: 100%;
         width: 15%;

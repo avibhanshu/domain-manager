@@ -1,36 +1,42 @@
+@import "../../../styles.scss";
 .content__header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
 
   .btn {
-    background-color: #5b7cfd;
-    border-radius: 5px;
-    color: #FFFFFF;
+    background-color: $blue-background;
+    border-radius: $border-radius;
+    color: $pure-white;
     cursor: pointer;
-    padding: 0.75rem 1.25rem;
+    padding: 1rem 1.25rem;
+    font-size: $font-size-small;
   }
 }
 
 .config {
-    display: flex;
-    width: 37.5%;
-    justify-content: space-between;
+  display: flex;
+  width: 37.5%;
+  justify-content: space-between;
+  font-size: $font-size-small;
 
-    .entries {
-        width: 5rem;
-    }
-    
-    .search {
-        margin: 0 2.5rem;
-    }
-    
-    .input {
-        background: transparent;
-        border-radius: 5px;
-        border: 2px solid #929292;
-        padding: 0.1rem;
-    }
+  .input {
+    background: transparent;
+  }
+
+  .entries {
+    padding: 0.05rem;
+    border-radius: $border-radius;
+    width: 5rem;
+    border: 2px solid $dark-grey;
+  }
+
+  .search {
+    margin: 0 2.5rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $dark-grey;
+  }
 }
 
 .data__table {
@@ -39,15 +45,16 @@
   .data__columns {
     display: flex;
     width: 100%;
-    background-color: #e3e5e8;
-    border-radius: 5px;
+    background-color: $grey-background;
+    border-radius: $border-radius;
     justify-content: space-between;
 
     .data__column {
       padding: 1rem 2rem;
-      color: #737b8b;
+      color: $dark-grey;
       flex-basis: 20%;
       text-align: center;
+      font-size: $font-size-smaller;
     }
   }
 
@@ -57,38 +64,38 @@
     justify-content: center;
     align-items: center;
     flex-basis: 20%;
+    font-size: $font-size-large;
   }
 
   .tag {
-      padding: 0.25rem 0.75rem;
-      border-radius: 5px;
+    padding: 0.25rem 0.75rem;
+    border-radius: $border-radius;
   }
 
   .add-on {
-    background-color: #fbe691;
-    color: #ffae33;
+    background-color: $add-on-tag-background;
+    color: $add-on-tag-color;
   }
 
   .primary {
-    background-color: #DEE5FF;
-    color: #D8E0FE;
+    background-color: $primary-tag-background;
+    color: $primary-tag-color;
   }
 
   .staging {
-      background-color: lighten(#FFC0CB, 7.5%);
-      color: darken(#FFC0CB, 20%);
+    background-color: lighten($staging-tag-color, 7.5%);
+    color: darken($staging-tag-color, 20%);
   }
 
   .active {
-    background-color: #CDF5F4;
-    color: #5b7cfd;
+    background-color: $active-tag-color;
+    color: darken($active-tag-color, 50%);
   }
 
   .inactive {
-      background-color: lighten(#FF7F57, 15%);
-      color: darken(#FF7F57, 25%);
+    background-color: lighten($inactive-tag-color, 15%);
+    color: darken($inactive-tag-color, 25%);
   }
-
 
   .data__row {
     margin: 1rem 0;
@@ -97,10 +104,11 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      background-color: #FFFFFF;
+      background-color: $pure-white;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       padding: 1.75rem 0;
+      color: $light-black;
 
       .domain__details--storage {
         justify-content: space-evenly;
@@ -111,36 +119,38 @@
       }
 
       .progress-bar {
-        background-color: #e7eef7;
+        background-color: $blue-background-light;
         width: 80%;
         margin-bottom: 0.5rem;
 
         .status {
-          background-color: #33cc86;
+          background-color: $green-background;
           height: 1rem;
         }
 
         .domain-status {
-          background-color: #5b7cfd;
+          background-color: $blue-background;
         }
       }
     }
 
     .subdomain__details {
-      background-color: #e3e5e8;
+      background-color: $grey-background;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      color: darken($dark-grey, 20%);
 
       .data__row--subdomain {
+        font-size: $font-size-medium;
         display: flex;
         justify-content: space-between;
         width: 100%;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
         padding: 1.5rem 0;
       }
     }

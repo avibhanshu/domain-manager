@@ -1,8 +1,30 @@
+$active-tag-color: #CDF5F4;
+$staging-tag-color: #FFC0CB;
+$inactive-tag-color: #FF7F57;
+$primary-tag-background: #DEE5FF;
+$primary-tag-color: #D8E0FE;
+$add-on-tag-background: #FBE691;
+$add-on-tag-color: #FFAE33;
+$pure-white: #FFFFFF;
+$dark-grey: #737B8B;
+$dark-grey: #737B8B;
+$light-black: #232D42;
+$blue-background: #5B7CFd;
+$blue-background-light: #E7EEF7;
+$grey-background: #E3E5E8;
+$green-background: #33CC86;
+
+$font-size-large: 0.925rem;
+$font-size-medium: 0.915rem;
+$font-size-small: 0.875rem;
+$font-size-smaller: 0.85rem;
+$border-radius: 5px;
+
 html,
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   height: 100%;
-  background-color: #E7EEF7;
+  background-color: $blue-background-light;
 }
 
 * {
@@ -11,3 +33,4 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+

@@ -1,9 +1,10 @@
+@import '../../styles.scss';
 .main {
     display: flex;
     align-items: center;
     height: 100%;
     justify-content: center;
-    color: #FFFFFF;
+    color: $pure-white;
 }
 
 .container {
@@ -25,6 +26,11 @@
 
             .user__info--name {
                 margin-bottom: 0.25rem;
+                font-size: $font-size-small;
+            }
+
+            .user__info--email {
+                font-size: $font-size-smaller;
             }
         }
     }
@@ -48,7 +54,8 @@
 
         .nav__link {
             text-decoration: none;
-            color: #FFFFFF;
+            color: $pure-white;
+            font-size: $font-size-small;
         }
     }
 }

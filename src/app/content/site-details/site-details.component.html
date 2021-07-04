@@ -3,12 +3,11 @@
   <a type="button" class="btn">+ Add New Site</a>
 </header>
 
-<!-- <app-table-config></app-table-config> -->
 <div class="config">
     <p>Show</p>
     <input type="number" class="entries input" [(ngModel)]="entriesCount">
     <p>Entries</p>
-    <input type="text" name="" id="" placeholder="Search" class="search input" [(ngModel)]="searchText">
+    <input type="text" placeholder="Search records" class="search input" [(ngModel)]="searchText">
 </div>
 
 <section class="data__table">
@@ -31,7 +30,7 @@
             }"
           ></div>
         </div>
-        <p>{{ domain.usedStorage }} of {{ domain.storage }}</p>
+        <p>{{ (domain.usedStorage) }} of {{ domain.storage }}</p>
       </div>
       <div class="domain__details--monthly-visitor data__table-cell">
         <div class="progress-bar">
