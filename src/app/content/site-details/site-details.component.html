@@ -6,7 +6,7 @@
 <!-- <app-table-config></app-table-config> -->
 <div class="config">
     <p>Show</p>
-    <input type="number" class="entries input">
+    <input type="number" class="entries input" [(ngModel)]="entriesCount">
     <p>Entries</p>
     <input type="text" name="" id="" placeholder="Search" class="search input" [(ngModel)]="searchText">
 </div>
@@ -17,7 +17,7 @@
       {{ col }}
     </div>
   </div>
-  <div class="data__row" *ngFor="let domain of domains | filter: searchText">
+  <div class="data__row" *ngFor="let domain of domains | filter: searchText | slice:0:entriesCount">
     <div class="domain__details">
       <div class="domain__details--name data__table-cell">
         {{ domain.domain }}

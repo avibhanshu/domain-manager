@@ -13,6 +13,7 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
   domains: Domain[] = [];
   domainsSubscription: Subscription;
   searchText: string = '';
+  entriesCount: number = this.domains.length;
   constructor(private domainService: DomainsService) {}
 
   ngOnInit(): void {
@@ -24,7 +25,10 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
     //   (err) => console.log(err)
     // );
     this.domainsSubscription = this.domainService.domainAdded.subscribe(
-      (domains) => (this.domains = domains)
+      (domains) => {
+        this.domains = domains;
+        this.entriesCount = this.domains.length;
+      }
     );
     this.domainService.fetchDomains();
   }
@@ -37,7 +41,7 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
   calcProgress(usedCapacity: any, totalCapacity: any) {
     const numerator = parseInt(usedCapacity.toString());
     const denominator = parseInt(totalCapacity.toString());
-    const percentage = (numerator/denominator) * 100;
+    const percentage = (numerator / denominator) * 100;
     return `${percentage}%`;
   }
 
@@ -47,18 +51,12 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
       Staging: 'staging',
       'Add On': 'add-on',
       Active: 'active',
-      Inactive: 'inactive'
-    }
+      Inactive: 'inactive',
+    };
     return classObj[tag];
   }
 
-  columns = [
-    'Domain Name',
-    'Storage',
-    'Monthly Visitor',
-    'Domains',
-    'Status',
-  ];
+  columns = ['Domain Name', 'Storage', 'Monthly Visitor', 'Domains', 'Status'];
 
   ngOnDestroy(): void {
     this.domainsSubscription.unsubscribe();
