@@ -14,6 +14,7 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
   domainsSubscription: Subscription;
   searchText: string = '';
   entriesCount: number = this.domains.length;
+  columns = ['Domain Name', 'Storage', 'Monthly Visitor', 'Domains', 'Status'];
   tagClasses: object = {
     Primary: 'primary',
     Staging: 'staging',
@@ -21,16 +22,11 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
     Active: 'active',
     Inactive: 'inactive',
   };
+  showModal: boolean = false;
+  
   constructor(private domainService: DomainsService) {}
 
   ngOnInit(): void {
-    // this.domainsSubscription = this.domainService.fetchDomains().subscribe(
-    //   (data) => {
-    //     this.domains = data;
-    //     console.log(data);
-    //   },
-    //   (err) => console.log(err)
-    // );
     this.domainsSubscription = this.domainService.domainAdded.subscribe(
       (domains) => {
         this.domains = domains;
@@ -40,23 +36,23 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
     this.domainService.fetchDomains();
   }
 
-  onAddDomain(form: NgForm) {
-    console.log(form);
-    // this.domainService.addDomain();
+  onAddDomain(newDomain: Domain) {
+    this.domainService.addDomain(newDomain);
+  }
+
+  closeOrDisplayModal() {
+    this.showModal = !this.showModal;
   }
 
   calcProgress(usedCapacity: any, totalCapacity: any) {
-    const numerator = parseInt(usedCapacity.toString());
-    const denominator = parseInt(totalCapacity.toString());
-    const percentage = (numerator / denominator) * 100;
+    console.log(usedCapacity, totalCapacity)
+    const percentage = (parseInt(usedCapacity.toString()) / parseInt(totalCapacity.toString())) * 100;
     return `${percentage}%`;
   }
 
   getTagClass(tagName: string) {
     return this.tagClasses[tagName];
   }
-
-  columns = ['Domain Name', 'Storage', 'Monthly Visitor', 'Domains', 'Status'];
 
   ngOnDestroy(): void {
     this.domainsSubscription.unsubscribe();

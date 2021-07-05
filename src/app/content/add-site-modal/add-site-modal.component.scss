@@ -1,0 +1,98 @@
+@import '../../../styles.scss';
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__content {
+    background-color: $pure-white;
+    border-radius: $border-radius;
+    height: 70%;
+    width: 60%;
+    color: black;
+    
+    .modal__content--header {
+        padding: 1.75rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid $grey-background;
+
+        .btn__exit {
+            cursor: pointer;
+        }
+    }
+    
+    .modal__content--form {
+        color: $light-black;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        
+        .form__inputs {
+            padding: 1.75rem 1.5rem;
+            height: 21rem;
+            display: flex;
+            justify-content: space-between;
+            
+            .form__column {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 42.5%;
+
+                .form__input-label {
+                    font-size: $font-size-small;
+                    margin-bottom: 0.5rem;
+                }
+    
+                .form__input {
+                    border: 2px solid $light-black;
+                    margin-bottom: 2rem;
+                    padding: 0.25rem 0.25rem;
+                }
+            }
+        }
+
+
+        .modal__content--footer {
+            display: flex;
+            justify-content: flex-end;
+            border-top: 2px solid $grey-background;
+            padding: 1.75rem 1.5rem;
+    
+            .btn {
+                padding: 0.85rem 1.5rem;
+                border-radius: $border-radius;
+                font-size: $font-size-small;
+                cursor: pointer;
+            }
+            
+            .btn__close {
+                background-color: $pure-white;
+                border: 1px solid $dark-grey;
+                margin-right: 1rem;
+            }
+    
+            .btn__save {
+                background-color: $blue-background;
+                color: $pure-white;
+                border: none;
+            }
+
+            .btn__disabled {
+                background-color: $grey-background;
+                color: $dark-grey;
+                border: none;
+            }
+    
+        }
+    }
+    
+}

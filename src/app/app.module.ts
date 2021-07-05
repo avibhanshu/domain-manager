@@ -9,6 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { SiteDetailsComponent } from './content/site-details/site-details.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { AddSiteModalComponent } from './content/add-site-modal/add-site-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     SidebarComponent,
     ContentComponent,
     SiteDetailsComponent,
-    FilterPipe
+    FilterPipe,
+    AddSiteModalComponent
   ],
   imports: [
     BrowserModule,

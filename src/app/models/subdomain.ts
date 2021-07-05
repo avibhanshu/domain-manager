@@ -1,5 +1,5 @@
 export interface Subdomain {
-    id: string;
+    id: number;
     name: string;
     usedStorage: string;
     domainTag: string;

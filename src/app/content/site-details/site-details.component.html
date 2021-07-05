@@ -1,7 +1,9 @@
 <header class="content__header">
   <h1>Site Details</h1>
-  <a type="button" class="btn">+ Add New Site</a>
+  <a class="btn" (click)="closeOrDisplayModal()">+ Add New Site</a>
 </header>
+
+<add-site-modal *ngIf="showModal" (closeModalEvent)="closeOrDisplayModal()" (submitForm)="onAddDomain($event)"></add-site-modal>
 
 <div class="config">
     <p>Show</p>

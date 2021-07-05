@@ -1,0 +1,61 @@
+<div class="modal">
+  <div class="modal__content">
+    <header class="modal__content--header">
+      <h3>Add Domain Details</h3>
+      <a class="btn__exit" (click)="closeModal()">X</a>
+    </header>
+    <form
+      action=""
+      class="modal__content--form"
+      (submit)="onAddDomain(addDomainform)"
+      #addDomainform="ngForm"
+    >
+      <div class="form__inputs">
+          <div class="form__column">
+              <label class="form__input-label" for="domainName">Domain Name*</label>
+              <input
+              type="text"
+              class="form__input"
+              [(ngModel)]="domainName"
+              name="domain"
+              id="domainName"
+              required
+              />
+              <label class="form__input-label" for="subdomainName">Subdomain Name</label>
+              <input
+              type="text"
+                class="form__input"
+                [(ngModel)]="subdomainName"
+                name="subdomain"
+                />
+            </div>
+            <div class="form__column">
+              <label class="form__input-label" for="storage">Storage* (in GB)</label>
+              <input
+              type="number"
+              class="form__input"
+              [(ngModel)]="storage"
+              name="storage"
+              id="storage"
+              required
+              />
+              <label class="form__input-label" for="monthlyVisitor">Monthly Visitor*</label>
+              <input
+                type="number"
+                class="form__input"
+                [(ngModel)]="monthlyVisitor"
+                name="monthlyVisitor"
+                id="monthlyVisitor"
+                required
+              />
+              
+          </div>
+      </div>
+
+      <footer class="modal__content--footer">
+        <a class="btn btn__close" (click)="closeModal()">Close</a>
+        <input class="btn btn__save" type="submit" [disabled]="!addDomainform.valid" [ngClass]="addDomainform.valid ? 'btn__save' : 'btn__disabled'" value="Save Changes">
+      </footer>
+    </form>
+  </div>
+</div>

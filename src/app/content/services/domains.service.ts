@@ -21,7 +21,8 @@ export class DomainsService {
   }
   
   addDomain(domain: Domain) {
-    this.http.post<Domain>(this.domainsListUrl, domain);
-    this.fetchDomains();
+    this.http.post<Domain>(this.domainsListUrl, domain).subscribe((domain: Domain) => {
+      this.domains.push(domain);
+    });
   }
 }
