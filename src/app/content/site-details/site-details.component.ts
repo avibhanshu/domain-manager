@@ -45,7 +45,6 @@ export class SiteDetailsComponent implements OnInit, OnDestroy {
   }
 
   calcProgress(usedCapacity: any, totalCapacity: any) {
-    console.log(usedCapacity, totalCapacity)
     const percentage = (parseInt(usedCapacity.toString()) / parseInt(totalCapacity.toString())) * 100;
     return `${percentage}%`;
   }

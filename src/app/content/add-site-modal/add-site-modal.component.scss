@@ -79,7 +79,7 @@
                 border: 1px solid $dark-grey;
                 margin-right: 1rem;
             }
-    
+            
             .btn__save {
                 background-color: $blue-background;
                 color: $pure-white;
@@ -90,6 +90,7 @@
                 background-color: $grey-background;
                 color: $dark-grey;
                 border: none;
+                cursor: default;
             }
     
         }

@@ -28,7 +28,6 @@ export class AddSiteModalComponent implements OnInit {
   }
 
   onAddDomain(form: NgForm) {
-    console.log(form.value);
       const subdomain: Subdomain = {
         id: Math.floor(Math.random() * 100),
         usedStorage: '0 GB',
